@@ -13,6 +13,9 @@
 				<a href="<?php echo site_url().'/welcome/index'; ?>">首页</a>
 			</li>
 			<li>
+				<a href="<?php echo site_url().'/welcome/wordcode'; ?>">CI乱码测试</a>
+			</li>
+			<li>
 				<a href="<?php echo site_url().'/welcome/getmodel'; ?>">获取model对象测试</a>
 			</li>
 			<li>

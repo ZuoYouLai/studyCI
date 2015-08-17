@@ -23,6 +23,21 @@ class Welcome extends CI_Controller {
 		$this->load->view('model/index');
 	}
 
+	//Ci乱码的测试1  --  单单echo中文字符是ok的
+	public function wordcode()
+	{
+		$data="你好！赖先生";
+		p($data);
+		$this->load->view('model/wordcodeTopage');
+
+	}
+
+	// 测试二 :在页面进行返回给controller再返回给view层 --测试通过
+	public function wordcodeTopage() 
+	{
+		$data=$this->input->post('myTxt');
+		p($data);
+	}
 
 	public function getmodel()
 	{
