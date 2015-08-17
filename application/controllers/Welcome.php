@@ -39,6 +39,13 @@ class Welcome extends CI_Controller {
 		p($data);
 	}
 
+
+	// 测试三 ：也就只有数据库乱码的问题了
+	public function wordcodeDataBase()
+	{
+		
+	}
+
 	public function getmodel()
 	{
 		$this->load->model('User_model','user');
