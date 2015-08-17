@@ -20,6 +20,17 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('model/index');
+	}
+
+
+	public function getmodel()
+	{
+		$this->load->model('User_model','user');
+		$data['users']=$this->user->selectAll();
+		// echo base_url() . 'style/index/';
+		// echo site_url() . '/index/home/category';
+		p($data);die;
+		// $this->load->view('model/getModel',$data);
 	}
 }

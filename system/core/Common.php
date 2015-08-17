@@ -850,3 +850,56 @@ if ( ! function_exists('function_usable'))
 		return FALSE;
 	}
 }
+
+
+
+
+/**
+ * 下面是自定义函数
+ */
+/**
+ * 格式化打印函数
+ * @param  [type] $arr [数组]
+ * @return [type]      [description]
+ */
+function p($arr){
+	echo '<pre>';
+	print_r($arr);
+	echo '</pre>';
+}
+// admin/category/index
+/**
+ * 成功提示函数
+ * @param  [type] $url [跳转地址]
+ * @param  [type] $msg [提示信息]
+ * @return [type]      [description]
+ */
+function success($url, $msg){
+	header('Content-Type:text/html;charset=utf-8');
+	$url = site_url($url);
+	echo "<script type='text/javascript'>alert('$msg');location.href='$url'</script>";
+	die;
+}
+
+/**
+ * 错误提示函数
+ * @param  [type] $msg [提示信息]
+ * @return [type]      [description]
+ */
+function error($msg){
+	header('Content-Type:text/html;charset=utf-8');
+	echo "<script type='text/javascript'>alert('$msg');window.history.back();</script>";
+	die;
+}
+
+
+/**
+ * 打印常量
+ */
+function print_const(){
+	$const = get_defined_constants(TRUE);
+	p($const['user']);	
+}
+
+
+
