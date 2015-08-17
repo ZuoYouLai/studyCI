@@ -21,7 +21,9 @@
 			<li>
 				<a href="<?php echo site_url().'/demo/excel/index'; ?>">Excel报表导出</a>
 			</li>
-			<li></li>
+			<li>
+			    <a href="<?php echo site_url().'/demo/excel/import'; ?>">Excel导入</a>
+			</li>
 			<li></li>
 		</ul>
 	</div>
