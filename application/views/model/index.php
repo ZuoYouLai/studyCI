@@ -33,6 +33,9 @@
 			<li>
 				 <a href="<?php echo site_url().'/demo/login/getDataIndex'; ?>">session验证</a>
 			</li>
+			<li>
+				 <a href="<?php echo site_url().'/demo/login/deletesession'; ?>">销毁session值</a>
+			</li>
 		</ul>
 	</div>
 	
