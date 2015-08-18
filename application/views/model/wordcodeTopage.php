@@ -9,5 +9,8 @@
 		<input type="text" name="myTxt">
 		<input type="submit" value="测试">
 	</form>
+
+	<br>	
+	<a href="<?php echo site_url().'/Welcome/wordcodeDataBase'; ?>">CI框架查出的数据乱码的测试【数据编码ok】</a>
 </body>
 </html>

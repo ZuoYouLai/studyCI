@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class GetPage extends CI_Controller {
+class GetPage extends MY_Controller {
 
 	public function index()
 	{

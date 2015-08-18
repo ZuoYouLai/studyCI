@@ -27,7 +27,12 @@
 			<li>
 			    <a href="<?php echo site_url().'/demo/excel/import'; ?>">Excel导入</a>
 			</li>
-			<li></li>
+			<li>
+				 <a href="<?php echo site_url().'/demo/login/index'; ?>">登陆验证码的demo</a>
+			</li>
+			<li>
+				 <a href="<?php echo site_url().'/demo/login/getDataIndex'; ?>">session验证</a>
+			</li>
 		</ul>
 	</div>
 	

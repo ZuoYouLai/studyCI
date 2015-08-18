@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Excel extends CI_Controller {
+class Excel extends MY_Controller {
 
 	//构造函数
 	function __construct()
