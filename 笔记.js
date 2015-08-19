@@ -139,8 +139,8 @@ insert into testTable(idname,incontent) values('春天游乐园','麦兜的世�
         uploads
     **************************************
 
-6.
-
+6.公共的模块的代码
+<?php $this->load->view('index/right.html') ?>
 
 
 
