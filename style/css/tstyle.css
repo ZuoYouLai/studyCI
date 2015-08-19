@@ -1,0 +1,32 @@
+.navigation
+{
+	margin-top: 10px;
+	margin-left: 20px;
+
+}
+
+.navigation li
+{
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+/***页码CSS样式***/
+.page{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.page a{
+	margin-left: 2px;
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+.page strong{
+	margin-left: 2px;
+	border: 1px solid #ccc;
+	padding: 3px;
+	font-weight: 400;
+}
