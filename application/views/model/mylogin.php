@@ -5,6 +5,9 @@
 	<title>MyLogin Page</title>
 </head>
 <body>
+	<a href="<?php echo site_url().'/project/Register/index'; ?>">注册</a>
+	<br>
+	<br>
 	<form method="POST" action="<?php echo site_url().'/demo/login/getDataByusername'; ?>" enctype="multipart/form-data">
 		<table  width="100%" border="1" cellspacing="1" cellpadding="0">
 			<tr>
@@ -40,4 +43,6 @@
 		</table>
 	</form>
 </body>
+
+
 </html>
