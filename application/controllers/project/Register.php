@@ -71,6 +71,10 @@ class Register extends CI_Controller {
 			// p($objSheet);die();
 			//给当前活动sheet起个名称
 			$objSheet->setTitle('第'.$i.'个工作簿');
+			//位置居中
+			$objSheet->getDefaultStyle()->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER)->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);//设置excel文件默认水平垂直方向居中
+			//字体的设置
+			//$objSheet->getDefaultStyle()->getFont()->setSize(14)->setName("微软雅黑");//设置默认字体大小和格式
 			//填充数据 [固定的数据]
 			$objSheet->setCellValue("A1","姓名")->setCellValue("B1","校区")->setCellValue("C1","学院")->setCellValue("D1","专业")->setCellValue("E1","年级")->setCellValue("F1","班级")->setCellValue("G1","分组");
 			$j=2;

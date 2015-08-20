@@ -10,6 +10,7 @@
 	<a href="<?php echo site_url().'/project/Register/index'; ?>">注册</a>
 	<a href="<?php echo site_url().'/project/Register/outportExcel'; ?>">批量导出</a>
 	<a href="<?php echo site_url().'/project/Register/inportforwodPage'; ?>">批量导入</a>
+	<a href="<?php echo site_url().'/project/BaiduEditer/index'; ?>">百度编辑器数据库的操作</a>
 	<br>
 	<br>
 	<form method="POST" action="<?php echo site_url().'/demo/login/getDataByusername'; ?>" enctype="multipart/form-data">

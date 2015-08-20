@@ -1,5 +1,7 @@
 DK-Project:
 
+localhost/studyCI/index.php
+
 0.导入数据库的操作
 	0.0找出对应的sql语句
 
@@ -78,6 +80,18 @@ php的批量导入的功能:样式-工作簿-排列
 	=======================================================================================
 
 
+	3.新建一张百度编辑器的文章
+	create table baiduaticle(
+		id varchar(100),
+		content text DEFAULT NULL COMMENT '编辑器的内容信息',
+		imginfo varchar(500) DEFAULT NULL COMMENT '图片信息',
+		realcontent text DEFAULT NULL COMMENT '纯文本信息',
+		htmlcontent text DEFAULT NULL COMMENT '文本加上html格式的信息',
+		PRIMARY KEY (`id`),
+		otherinfo varchar(1000) DEFAULT NULL COMMENT '其他信息的存取'
+	) ENGINE=MYISAM DEFAULT CHARSET=gbk COMMENT='百度编辑器存放的文章的信息表' AUTO_INCREMENT=1 ;
 
 
 
+//uuid()  测试  ok
+insert into baiduaticle(id,content)  values(uuid(),"您好...");
