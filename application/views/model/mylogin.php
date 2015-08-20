@@ -5,7 +5,11 @@
 	<title>MyLogin Page</title>
 </head>
 <body>
+	<br>
+	<br>
 	<a href="<?php echo site_url().'/project/Register/index'; ?>">注册</a>
+	<a href="<?php echo site_url().'/project/Register/outportExcel'; ?>">批量导出</a>
+	<a href="<?php echo site_url().'/project/Register/inportforwodPage'; ?>">批量导入</a>
 	<br>
 	<br>
 	<form method="POST" action="<?php echo site_url().'/demo/login/getDataByusername'; ?>" enctype="multipart/form-data">

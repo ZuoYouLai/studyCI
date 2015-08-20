@@ -48,7 +48,7 @@
 			<tr>
 				<td>学院:</td>
 				<td>
-					<select name="accademy" id="accademy">
+					<select name="accademy" id="accademy" class="mselect">
 						<option value="">请选择</option>
 						<option value="信息工程学院">信息工程学院</option>
 						<option value="临床学院">临床学院</option>
@@ -59,7 +59,7 @@
 			</tr>
 			<tr>
 				<td>专业:</td><td>
-					<select name="acprofes" id="acprofes">
+					<select name="acprofes" id="acprofes" class="mselect">
 						<option value="">请选择</option>
 						<option value="医学信息系统">医学信息系统</option>
 						<option value="生物医学工程">生物医学工程</option>
@@ -75,13 +75,13 @@
 			</tr>
 			<tr>
 				<td>列为发展对象的时间:</td>
-				<td><input type="text" name="lwdxtime" id='lwdxtime' onfocus="WdatePicker({skin:'whyGreen',maxDate:'%y-%M-%d-1',isShowClear:true,readOnly:true,dateFmt:'yyyy-MM-dd'})">
+				<td><input type="text" name="lwdxtime" id='lwdxtime'  onfocus="WdatePicker({skin:'whyGreen',maxDate:'%y-%M-%d-1',isShowClear:true,readOnly:true,dateFmt:'yyyy-MM-dd'})">
 					<label id="lwdxtime_tip"></label>
 				</td>
 			</tr>
 			<tr>
 				<td>推优通过率:</td>
-				<td><input type="text" name="typercent" id='typercent'>%
+				<td><input type="text" name="typercent" id='typercent' onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">%
 					<label id="typercent_tip"></label>
 				</td>
 			</tr>

@@ -48,3 +48,36 @@ jq的闭包的写法：
 
 
 
+上午:
+注册的校验的基本完成，注意一开始的需求的问题，不然会影响代码重构的问题
+
+
+
+下午:
+php的批量导入的功能:样式-工作簿-排列
+	//在controller里面的方法的互相调用
+	$this->XX('Excel5','学生信息表.xls');//调用的方法
+	1.先导出   【材料为先】  ok
+
+	2.再导入
+	===================================API参考============================================
+	//读取Excel文件
+	$PHPExcel = $PHPReader->load($filePath);
+	  
+	//获取工作表的数目
+	$sheetCount = $PHPExcel->getSheetCount();
+	  
+	//选择第一个工作表
+	$currentSheet = $PHPExcel->getSheet(0);
+	  
+	//取得一共有多少列
+	$allColumn = $currentSheet->getHighestColumn();   
+	  
+	//取得一共有多少行
+	$allRow = $currentSheet->getHighestRow();
+	=======================================================================================
+
+
+
+
+

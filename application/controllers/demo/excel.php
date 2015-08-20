@@ -25,8 +25,10 @@ class Excel extends MY_Controller {
 		// $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1', iconv('gbk', 'utf-8', '中文Hello'))->setCellValue('B2', 'world!')->setCellValue('C1', 'Hello');
 
 		$col=0;
-		$arrgroup= array('id','rid');
+		$arrgroup= array('id名称','rid名称');
+		// $arrgroup= array('id','rid');
 		foreach ($arrgroup as $v) {
+			// iconv("UTF-8", "GB2312//IGNORE", $v); 
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, 1, $v);
 			$col++;
 		}
@@ -35,14 +37,14 @@ class Excel extends MY_Controller {
 		$row=2;
 		// p($data['userinfos'][0]['id']);
 		// p($data['userinfos']);die;
-		foreach ($data['userinfos'] as  $data) {
-			$col=0;
-			foreach ($arrgroup as $field) {
-				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $data[$field]);
-				$col++;
-			}
-			$row++;
-		}
+		// foreach ($data['userinfos'] as  $data) {
+		// 	$col=0;
+		// 	foreach ($arrgroup as $field) {
+		// 		$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $data[$field]);
+		// 		$col++;
+		// 	}
+		// 	$row++;
+		// }
 
 		$objPHPExcel->setActiveSheetIndex(0);
 
@@ -53,7 +55,9 @@ class Excel extends MY_Controller {
 		// $objWriter = IOFactory::createWriter($objPHPExcel, 'Excel5');
 		$objWriter = IOFactory::createWriter($objPHPExcel, 'Excel2007');
 		//发送标题强制用户下载文件
-		header('Content-Type: application/vnd.ms-excel');
+		// header('Content-Type: application/vnd.ms-excel');
+		header('Content-Type: application/vnd.ms-excel; charset="UTF-8"'); 
+		// header("Content-type: text/html; charset=utf-8");
 		// 2种格式
 		// header('Content-Disposition: attachment;filename="Products_'.date('dMy').'.xls"');
 		header('Content-Disposition: attachment;filename="Products_'.date('dMy').'.xlsx"');
@@ -104,6 +108,8 @@ class Excel extends MY_Controller {
 		$objReader=IOFactory::createReader('Excel2007');
 		//读取整个execl文件生成excel的object
 		$objPHPExcel=$objReader->load($targetfile);
+		//获取总的sheet数
+		$size=$objPHPExcel->getSheetCount();
 		//读取第一行sheet
 		$sheet=$objPHPExcel->getSheet(0);
 		//获取总行数
