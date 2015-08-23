@@ -4,23 +4,24 @@
 	<meta charset="UTF-8">
 	<title>首页内容</title>
 	<link href="<?php echo base_url() . 'style/' ?>css/style.css" rel="stylesheet" />
-	<script type="text/javascript" src="<?php echo base_url() ?>ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url() ?>ueditor1/ueditor.config.js"></script>
+	<script type="text/javascript" src="<?php echo base_url() ?>ueditor1/ueditor.all.min.js"></script>
 	<script type="text/javascript">
-		window.UEDITOR_HOME_URL = "<?php echo base_url() ?>ueditor/";
+		window.UEDITOR_HOME_URL = "<?php echo base_url() ?>ueditor1/";
 		window.onload = function(){
-			window.UEDITOR_CONFIG.initialFrameWidth = 800;
-			window.UEDITOR_CONFIG.initialFrameHeight = 200;
-			UE.getEditor('content');
+			window.UEDITOR_CONFIG.initialFrameWidth = 1024;
+			window.UEDITOR_CONFIG.initialFrameHeight = 500;
+			UE.getEditor('content');	
 		}
+		// UE.getEditor('editor');
 	</script>
-	<script type="text/javascript" src="<?php echo base_url() ?>ueditor/ueditor.config.js"></script>
 	<style type="text/css">
 		span{color: red}
 	</style>
 </head>
 <body>
 	<div class="formcontent">
-		<form action="<?php echo site_url() .'/project/BaiduEditer/saveInfo'?>" id="myform" method='post'>
+		<form action="<?php echo site_url() .'/project/BaiduEditer/saveInfoTwo'?>" id="myform" method='post'>
 				<td>编辑器:</td>
 				<td>
 					<textarea name="content"  id="content">

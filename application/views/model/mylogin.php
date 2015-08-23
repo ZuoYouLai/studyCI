@@ -11,6 +11,8 @@
 	<a href="<?php echo site_url().'/project/Register/outportExcel'; ?>">批量导出</a>
 	<a href="<?php echo site_url().'/project/Register/inportforwodPage'; ?>">批量导入</a>
 	<a href="<?php echo site_url().'/project/BaiduEditer/index'; ?>">百度编辑器数据库的操作</a>
+	<a href="<?php echo site_url().'/project/BaiduEditer/indexTwo'; ?>">按照需求的百度编辑器</a>
+	<a href="<?php echo site_url().'/project/Authorization/index'; ?>">权限管理系统</a>
 	<br>
 	<br>
 	<form method="POST" action="<?php echo site_url().'/demo/login/getDataByusername'; ?>" enctype="multipart/form-data">

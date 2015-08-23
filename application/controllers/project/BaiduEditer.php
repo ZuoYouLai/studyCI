@@ -11,16 +11,28 @@ class BaiduEditer extends CI_Controller {
 
 	public function index()
 	{
-		//����ע��ҳ���
 		$this->load->view('project/BaiduEditerView');
+		
+	}
+	public function indexTwo()
+	{
+		$this->load->view('project/BaiduEditerViewTwo');
 		
 	}
 
 	public function saveInfo()
 	{
-		//����ٶȱ༭������
-
+			$data=$this->input->post('content');
+			p($data);die();
 	}
+
+	public function saveInfoTwo()
+	{
+		// 最新的百度编辑器的功能->只需要配置对应的path即可 配置文件设置非常的棒  降低学习成本
+			$data=$this->input->post('content');
+			p($data);die();
+	}
+
 
 
 }
