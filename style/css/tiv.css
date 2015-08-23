@@ -1,0 +1,35 @@
+.bder
+{
+	border: 1px solid #eee;
+}
+
+/*内容页*/
+.mtf15
+{
+	margin-top: -21px;
+	/*margin-left: 5px;*/
+}
+
+.ml15
+{
+	margin-left: 5px;
+}
+
+/*左侧ul*/
+.leftul
+{
+	width: 100%;
+}
+.leftul li
+{
+	/*display:block;*/
+	margin-top: 25px;
+	/*margin-bottom: 10px;*/
+	text-align:center;
+	border-bottom: 1px solid #eee;
+}
+
+.nobder
+{
+	border: none;
+}
