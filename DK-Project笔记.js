@@ -198,14 +198,14 @@ CREATE TABLE lxd_user(
 	sex VARCHAR(10) COMMENT '用户性别',
 	addr VARCHAR(1000) COMMENT '用户地址',
 	content VARCHAR(500) COMMENT '用户内容'
-);
+)ENGINE=MYISAM DEFAULT CHARSET=gbk COMMENT='用户表' AUTO_INCREMENT=1 ;
 
 DROP TABLE lxd_users_role;
 DROP TABLE lxd_user_role;
 CREATE TABLE lxd_user_role(
 	uid VARCHAR(100) COMMENT '用户id',
 	rid VARCHAR(100) COMMENT '角色id'
-);
+)ENGINE=MYISAM DEFAULT CHARSET=gbk COMMENT='用户与角色关联表' AUTO_INCREMENT=1 ;
 
 DROP TABLE lxd_role;
 CREATE TABLE lxd_role(
@@ -213,7 +213,7 @@ CREATE TABLE lxd_role(
 	rname VARCHAR(100) COMMENT '角色名称',
 	rgroup VARCHAR(100) COMMENT '角色分组',
 	rcontent VARCHAR(500) COMMENT '角色内容'
-);
+)ENGINE=MYISAM DEFAULT CHARSET=gbk COMMENT='角色表' AUTO_INCREMENT=1 ;
 
 DROP TABLE lxd_role_power;
 CREATE TABLE lxd_role_power(
@@ -260,3 +260,22 @@ CREATE TABLE lxd_feature(
 
 ===========================================end========================================================
 权限管理系统(Authorization):
+
+角色表:
+insert into lxd_role(rid,rname,rgroup,rcontent) values(uuid(),'超级管理员','00001','管理全校');
+insert into lxd_role(rid,rname,rgroup,rcontent) values(uuid(),'管理员','00002','管理一个校区');
+
+用户表:
+insert into lxd_user(uid,name,sex,addr,content) values(uuid(),'赖豪达','男','广州','毕业生');
+insert into lxd_user(uid,name,sex,addr,content) values(uuid(),'罗勤夫','男','深圳','毕业生');
+
+角色与用户表:
+insert into lxd_user_role(uid,rid) values('0dc74e1d-4a6b-11e5-bb9c-11815420a4d5','5922a8bf-4a6a-11e5-bb9c-11815420a4d5');
+insert into lxd_user_role(uid,rid) values('0dcb3dc7-4a6b-11e5-bb9c-11815420a4d5','593619b8-4a6a-11e5-bb9c-11815420a4d5');
+
+
+添加列:
+alter table lxd_role add rpgroup varchar(100);
+
+====CI的第一条查询====
+select * from lxd_user as u  inner join lxd_user_role as ur  inner join lxd_role as r where u.uid=ur.uid and r.rid=ur.rid;

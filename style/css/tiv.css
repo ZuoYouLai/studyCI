@@ -33,3 +33,47 @@
 {
 	border: none;
 }
+
+
+/*新的左侧ul的标签*/
+/*.nleftul
+{
+  border-right: 2px dotted #eee;
+}*/
+/*border-style:dotted solid double dashed; */
+/*上边框是点状
+右边框是实线
+下边框是双线
+左边框是虚线*/
+.nleftul li>span
+{
+	display: block;
+	width: 50%;
+	margin:0 auto;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	border-bottom: 2px solid #eee;
+	/*border-right: 2px dotted #eee;*/
+}
+
+.nleftul li>span:hover
+{
+	font-size: 20px;
+	color: red;
+	text-decoration: underline;
+
+}
+
+/*内容页的树css*/
+/*.mianboder
+{
+	margin-left: 30px;
+}*/
+.maincenter
+{
+	width: 95%
+}
+.adduser
+{
+	float: left;
+}

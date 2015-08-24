@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="<?php  echo base_url() .'style/Bootstrap/css/bootstrap.min.css'  ?>">
 	<link href="<?php echo base_url() . 'style/' ?>css/style.css" rel="stylesheet" />
 	<link href="<?php echo base_url() . 'style/' ?>css/tiv.css" rel="stylesheet" />
+	<link href="<?php echo base_url() . 'style/' ?>css/ez-min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php echo base_url() . 'style/' ?>css/ztreecss/zTreeStyle/zTreeStyle.css" type="text/css">
+
 </head>
 <body>
 <!-- 头部 -->
@@ -18,36 +21,28 @@
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </button>
-	    <a class="navbar-brand" href="#">CheckRole</a>
+	    <a class="navbar-brand" href="#">
+	    	<b>权限管理系统</b></a>
 	  </div>
 
 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="#">人员管理</a></li>
 	      <li><a href="#">权限管理</a></li>
-	      <li class="dropdown">
-	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉菜单 <b class="caret"></b></a>
-	        <ul class="dropdown-menu">
-	          <li><a href="#">Action</a></li>
-	          <li><a href="#">Another action</a></li>
-	          <li><a href="#">Something else here</a></li>
-	          <li class="divider"></li>
-	          <li><a href="#">Separated link</a></li>
-	          <li class="divider"></li>
-	          <li><a href="#">One more separated link</a></li>
-	        </ul>
-	      </li>
 	    </ul>
 	  </div>
 	</nav>
 </div>
 
+<div id='treedata'>
+	<?php echo $datajson; ?>
+</div>
 
 <!-- 内容页 -->
-<div class="main mtf15">
-	<div class="row ml15">
-	  <div class="col-md-2 bder">
-	  		<ul class="leftul">
+<div class="main">
+	<div class="ez-wr ">
+		<div class="ez-fl ez-negmx ez-25 " >
+			<ul class="nleftul">
 	  			<li>
 	  				<span>
 	  					用户管理
@@ -68,23 +63,54 @@
 	  					模块管理
 	  				</span>
 	  			</li>
-	  			<li class='nobder'>
-	  				<span>
+	  			<li>
+	  				<span >
 	  					功能管理
 	  				</span>
 	  			</li>
 	  		</ul>
-	  		<!-- <div class="row">
-	  			<div class="col-md-12">用户管理</div>
-	  			<div class="col-md-12">角色管理</div>
-	  			<div class="col-md-12">权限管理</div>
-	  			<div class="col-md-12">模块管理</div>
-	  			<div class="col-md-12">功能管理</div>
-	  		</div> -->
-	  </div>
-	  <div class="col-md-9">
-	  	
-	  </div>
+		</div>
+		<div class="ez-last ez-oh">
+			<div class="ez-wr">
+				<div class="ez-fl ez-negmx ez-25 mianboder">
+					<ul id="treeDemo" class="ztree"></ul>
+				</div>
+				<div class="ez-fl ez-negmx ez-75 ">
+					<div class="adduser">
+						<button type="button" class="btn btn-info">查看信息</button>
+						<button type="button" class="btn btn-primary">添加用户</button>
+						<button type="button" class="btn btn-danger">删除用户</button>
+					</div>
+					<table class="table table-hover maincenter">
+						<thead>
+						<tr class='mtr'>
+							<td><b>#</b></td>
+							<td class="hide1"><b>id</b></td>
+							<td><b>用户名</b></td>
+							<td><b>管理权限</b></td>
+							<td><b>所属学院</b></td>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>001</td>
+							<td>赖豪达</td>
+							<td>超级管理员</td>
+							<td>东莞校区</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>002</td>
+							<td>罗勤夫</td>
+							<td>管理员</td>
+							<td>二级学院</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -92,6 +118,8 @@
 <!-- 尾页 -->
 
 </body>
-	<script type="text/javascript" src="<?php  echo base_url() .'style/js/jquery-1.11.1.min.js'  ?>"></script>
+	<script type="text/javascript" src="<?php  echo base_url() .'style/js/ztreejs/jquery-1.4.4.min.js'  ?>"></script>
+	<script type="text/javascript" src="<?php  echo base_url() .'style/js/ztreejs/jquery.ztree.core-3.5.js'  ?>"></script>
   	<script src="<?php  echo base_url() .'style/Bootstrap/js/bootstrap.min.js'  ?>"></script>
+  	<script src="<?php  echo base_url() .'style/js/tiv.js'  ?>"></script>
 </html>
