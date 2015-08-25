@@ -1,10 +1,4 @@
-var setting = {
-			data: {
-				simpleData: {
-					enable: true
-				}
-			}
-		};
+
 
 		var zNodes =[
 			{ id:1, pId:0, name:"父节点1 - 展开", open:true},
@@ -38,6 +32,69 @@ var setting = {
 			{ id:3, pId:0, name:"父节点3 - 没有子节点", isParent:true}
 		];
 
-		$(document).ready(function(){
-			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
-		});
+$(document).ready(function(){
+	// $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	// 初始化树
+	var setting = {
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback:
+			{
+				onClick:treeNodeClick
+			}
+			
+		};
+
+	//初始化+ajax的写法
+	$.ajax({
+		url:'/studyCI/index.php/project/Authorization/ajaxTreeRoleData',
+		type:'POST',
+		// data:"1",
+		success:function(data,status){
+			// test ok!
+			// debugger;
+			// alert(data);
+			var $data=JSON.parse(data);
+			debugger;
+			$.fn.zTree.init($("#treeDemo"), setting, $data);
+		},
+		error:function(){
+
+		}
+	});
+
+	//进行树节点的点击
+	function treeNodeClick(event, treeId, treeNode, clickFlag)
+	{
+		// debugger;
+		// 根据roleid进行找对应的id值
+		$.ajax({
+		url:'/studyCI/index.php/project/Authorization/TreeNodeClick',
+		type:'POST',
+		data:{'roleid':treeNode.rid},
+		success:function(data,status){
+			alert(data);
+			debugger;
+			// $.fn.zTree.init($("#treeDemo"), setting, $data);
+		},
+		error:function(){
+
+		}
+	});
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+});

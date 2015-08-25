@@ -33,10 +33,9 @@
 	  </div>
 	</nav>
 </div>
-
+<!-- 
 <div id='treedata'>
-	<?php echo $datajson; ?>
-</div>
+</div> -->
 
 <!-- 内容页 -->
 <div class="main">
