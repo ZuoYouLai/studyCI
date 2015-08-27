@@ -34,6 +34,11 @@
 
 $(document).ready(function(){
 	// $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+	//基本的url
+	var baseUrl='/studyCI1/index.php/';
+
+
 	// 初始化树
 	var setting = {
 			data: {
@@ -50,7 +55,7 @@ $(document).ready(function(){
 
 	//初始化+ajax的写法
 	$.ajax({
-		url:'/studyCI/index.php/project/Authorization/ajaxTreeRoleData',
+		url:baseUrl+'project/Authorization/ajaxTreeRoleData',
 		type:'POST',
 		// data:"1",
 		success:function(data,status){
@@ -72,11 +77,11 @@ $(document).ready(function(){
 		// debugger;
 		// 根据roleid进行找对应的id值
 		$.ajax({
-		url:'/studyCI/index.php/project/Authorization/TreeNodeClick',
+		url:baseUrl+'/project/Authorization/TreeNodeClick',
 		type:'POST',
 		data:{'roleid':treeNode.rid},
 		success:function(data,status){
-			alert(data);
+			// alert(data);
 			debugger;
 			// $.fn.zTree.init($("#treeDemo"), setting, $data);
 		},
@@ -89,7 +94,10 @@ $(document).ready(function(){
 
 
 
-
+	//进行添加用户
+	$("#addUserbtn").click(function(){
+		// alert();
+	});
 
 
 

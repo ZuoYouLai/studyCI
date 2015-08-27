@@ -41,16 +41,32 @@ class Authorization extends CI_Controller {
 	{
 		$roid=$this->input->post('roleid');
 		$data=$this->role->getUserByroleId($roid);
+		// for ($i=0; $i <count($data) ; $i++) { 
+		// 其实，数组中是返回的是一个对象，不能直接用[]来显示，正确的输出方法是：$pic[0]->title
+		// echo count($data);
+		// p($data[0]);
+		// // echo $data[0]->uid;
+		// echo $data[0]['uid'];
+		// p($data);die();
 		for ($i=0; $i <count($data) ; $i++) { 
-
-		// 	foreach ($data[$i] as $key => $val) {
-		// 		$data[$i][$key]=urlencode($val);
-		// 	}
+			foreach ($data[$i] as $key => $val) {
+				$data[$i][$key]=urlencode($val);
+			}
 		}
 		// json对象的转码  test ok！
+		$datajson=urldecode(json_encode($data));
+		echo $datajson;
+		// json对象的转码  test ok！
+		// $datajson=urldecode(json_encode($data));
+		// echo $data;
+		// p($data);die();
+		// foreach ($data as $key => $value) {
+		// 	$data[$key]=urlencode($value);
+		// }
 		// $datajson=urldecode(json_encode($data));
 		// echo $datajson;
-		p($data);
+		// p(json_encode($data));
+		// p($data);
 	}
 
 

@@ -30,12 +30,14 @@ class Lxd_role_model extends CI_Model{
 		// $this->db->orderby("name", "desc");
 		// $query = $this->db->get();
 		// $data=$this->db->select('*')->from('lxd_user as u')->join('lxd_user_role as ur','u.uid=ur.uid  and ur.rid='.$roid)->get()->result_array();
-		$roid='5922a8bf-4a6a-11e5-bb9c-11815420a4d5';
-		$this->db->select('id');
-		$this->db->from('lxd_user as u');
-		$this->db->join('lxd_user_role as ur', 'u.uid=ur.uid');
-		$this->db->where('ur.rid', $roid);
-		$data=$query = $this->db->get();
+		// $roid='3bb94a56-4c94-11e5-ba7f-f0def1ef70bb';
+		// $this->db->select('u.uid,u.name');
+		// $this->db->from('lxd_user as u');
+		// $this->db->join('lxd_user_role as ur', 'u.uid=ur.uid');
+		// $this->db->where('ur.rid', $roid);
+		// $data=$query = $this->db->get();
+		// $this->db->query("SELECT id, name, url FROM sites WHERE 'type' = 'dynamic'");
+		$data=$this->db->query("select * from lxd_user as u inner join lxd_user_role as ur  where u.uid=ur.uid and  ur.rid='".$roid."'")->result_array();
 		return $data;
 	}
 

@@ -270,8 +270,11 @@ insert into lxd_user(uid,name,sex,addr,content) values(uuid(),'赖豪达','男',
 insert into lxd_user(uid,name,sex,addr,content) values(uuid(),'罗勤夫','男','深圳','毕业生');
 
 角色与用户表:
-insert into lxd_user_role(uid,rid) values('0dc74e1d-4a6b-11e5-bb9c-11815420a4d5','5922a8bf-4a6a-11e5-bb9c-11815420a4d5');
-insert into lxd_user_role(uid,rid) values('0dcb3dc7-4a6b-11e5-bb9c-11815420a4d5','593619b8-4a6a-11e5-bb9c-11815420a4d5');
+insert into lxd_user_role(uid,rid) values('42e3bf4d-4c94-11e5-ba7f-f0def1ef70bb','3bb94a56-4c94-11e5-ba7f-f0def1ef70bb');
+insert into lxd_user_role(uid,rid) values('42e8f78e-4c94-11e5-ba7f-f0def1ef70bb','3bbb753f-4c94-11e5-ba7f-f0def1ef70bb');
+
+
+
 
 
 添加列:
@@ -279,3 +282,20 @@ alter table lxd_role add rpgroup varchar(100);
 
 ====CI的第一条查询====
 select * from lxd_user as u  inner join lxd_user_role as ur  inner join lxd_role as r where u.uid=ur.uid and r.rid=ur.rid;
+
+
+====第2条数据查询====
+select * from lxd_user as u inner join lxd_user_role as ur  where  ur.rid='3bb94a56-4c94-11e5-ba7f-f0def1ef70bb'
+==优化:
+select * from lxd_user as u inner join lxd_user_role as ur  where u.uid=ur.uid and  ur.rid='3bb94a56-4c94-11e5-ba7f-f0def1ef70bb'
+
+
+
+CI的查询的标准写法:
+$data=$this->db->query("select * from lxd_user as u inner join lxd_user_role as ur  where u.uid=ur.uid and  ur.rid='".$roid."'")->result();
+
+
+$data=$this->db->query("select * from lxd_user as u inner join lxd_user_role as ur  where u.uid=ur.uid and  ur.rid='".$roid."'")->row();
+
+
+

@@ -76,9 +76,9 @@
 				</div>
 				<div class="ez-fl ez-negmx ez-75 ">
 					<div class="adduser">
-						<button type="button" class="btn btn-info">查看信息</button>
-						<button type="button" class="btn btn-primary">添加用户</button>
-						<button type="button" class="btn btn-danger">删除用户</button>
+						<button type="button" class="btn btn-info" id="getUserInfobtn">查看信息</button>
+						<button type="button" class="btn btn-primary" id="addUserbtn">添加用户</button>
+						<button type="button" class="btn btn-danger" id="delUserbtn">删除用户</button>
 					</div>
 					<table class="table table-hover maincenter">
 						<thead>
@@ -113,12 +113,14 @@
 	</div>
 </div>
 
+<!-- 遮罩 -->
+
+
 
 <!-- 尾页 -->
 
 </body>
 	<script type="text/javascript" src="<?php  echo base_url() .'style/js/ztreejs/jquery-1.4.4.min.js'  ?>"></script>
 	<script type="text/javascript" src="<?php  echo base_url() .'style/js/ztreejs/jquery.ztree.core-3.5.js'  ?>"></script>
-  	<script src="<?php  echo base_url() .'style/Bootstrap/js/bootstrap.min.js'  ?>"></script>
   	<script src="<?php  echo base_url() .'style/js/tiv.js'  ?>"></script>
 </html>
