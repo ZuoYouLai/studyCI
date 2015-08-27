@@ -96,7 +96,10 @@ $(document).ready(function(){
 
 	//进行添加用户
 	$("#addUserbtn").click(function(){
+		// debugger;
 		// alert();
+		$('#shade').show();
+		$('#register').show();
 	});
 
 

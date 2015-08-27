@@ -114,7 +114,9 @@
 </div>
 
 <!-- 遮罩 -->
-
+<div id="shade"></div>
+<!-- 注册 -->
+<div id="register"></div>
 
 
 <!-- 尾页 -->
